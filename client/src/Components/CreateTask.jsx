@@ -22,7 +22,7 @@ export default function CreateTask() {
     console.log(data)
 
     const handleSubmit = () => {
-        axios.post("http://localhost:8000/task", data)
+        axios.post("https://subho-backend-production.up.railway.app/task", data)
         .then((res)=>{
             toast({
                 title: 'Task created.',

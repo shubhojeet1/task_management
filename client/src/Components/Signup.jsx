@@ -23,7 +23,7 @@ export default function Signup() {
     }
 
     const handleSubmit = () => {
-        axios.post("http://localhost:8000/user/signup", data)
+        axios.post("https://subho-backend-production.up.railway.app/user/signup", data)
         .then((res)=>{
             toast({
                 title: 'Account created.',

@@ -12,7 +12,7 @@ export default function Tasks() {
     }, [])
 
     const getAllTask = async (page) => {
-        await axios(`http://localhost:8000/task?page=${page}`)
+        await axios(`https://subho-backend-production.up.railway.app/task?page=${page}`)
             .then((res) => {
                 setAllTask(res.data.tasks)
                 if (res.data.count / 10 !== Math.floor(res.data.count / 10)) {
@@ -24,7 +24,7 @@ export default function Tasks() {
     }
 
     const changeStatus = async (id, status) => {
-        await axios.put(`http://localhost:8000/task?id=${id}`, {
+        await axios.put(`https://subho-backend-production.up.railway.app/task?id=${id}`, {
             status: status
         })
         toast({
@@ -38,7 +38,7 @@ export default function Tasks() {
     }
 
     const deleteTask = async (id) => {
-        await axios.delete(`http://localhost:8000/task?id=${id}`)
+        await axios.delete(`https://subho-backend-production.up.railway.app/task?id=${id}`)
         getAllTask()
         toast({
             title: 'Deleted.',
